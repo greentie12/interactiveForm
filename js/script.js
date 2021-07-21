@@ -5,11 +5,25 @@ const options = document.querySelectorAll("#title option");
 const design = document.getElementById("design");
 const color = document.getElementById("color");
 const colorOptions = document.querySelectorAll("#color option");
+const activites = document.getElementById("activities");
+const activityCostP = document.getElementById("activities-cost");
+const paymentOptions = document.querySelectorAll("#payment option");
+
+let totalCost = 0;
+
+const creditCardSelect = () => {
+  for (let x = 0; x < paymentOptions.length; x++) {
+    if (paymentOptions[x].value === "credit-card") {
+      paymentOptions[x].selected = true;
+    }
+  }
+};
 
 window.onload = function () {
   nameField.focus();
   otherJobRole.style.display = "none";
   color.disabled = true;
+  creditCardSelect();
 };
 
 jobRole.addEventListener("click", (e) => {
@@ -45,5 +59,21 @@ design.addEventListener("click", (e) => {
         colorOptions[i].hidden = true;
       }
     }
+  }
+});
+
+activites.addEventListener("change", (e) => {
+  let activityCost = e.target.dataset.cost;
+  activityCost = parseInt(activityCost);
+  if (e.target.checked) {
+    totalCost += activityCost;
+    activityCostP.innerHTML = `
+		Total: $${totalCost}
+	`;
+  } else {
+    totalCost -= activityCost;
+    activityCostP.innerHTML = `
+		Total: $${totalCost}
+	`;
   }
 });
