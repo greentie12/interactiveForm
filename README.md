@@ -1,6 +1,6 @@
 # interactiveForm
-JavaScript Interactive Form project concentrating on **DOM Manipulation, Form Validation, 
-JS Regular Expressions, JS conditionals and Accessibility.
+JavaScript Interactive Form project concentrating on DOM Manipulation, Form Validation, 
+JS Regular Expressions, JS Conditionals and Accessibility.
 
 ## Extra Credit
 * Prevent users from registering for conflicting activities
