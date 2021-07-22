@@ -20,11 +20,11 @@ const cvv = document.getElementById("cvv");
 const paypal = document.getElementById("paypal");
 const bitcoin = document.getElementById("bitcoin");
 /*totalCost variable to determine if 
-an activity choice has been made*/
+an activity choice has been made */
 let totalCost = 0;
 
 /*focusActivity & removeFocusActivity which adds or 
-removes the .focus class on the activity label  */
+removes the .focus class on the activity label */
 const focusActivity = () => {
   for (let x = 0; x < activityInputs.length; x++) {
     activityInputs[x].addEventListener("focus", function () {
