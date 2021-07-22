@@ -19,9 +19,12 @@ const zip = document.getElementById("zip");
 const cvv = document.getElementById("cvv");
 const paypal = document.getElementById("paypal");
 const bitcoin = document.getElementById("bitcoin");
-
+/*totalCost variable to determine if 
+an activity choice has been made*/
 let totalCost = 0;
 
+/*focusActivity & removeFocusActivity which adds or 
+removes the .focus class on the activity label  */
 const focusActivity = () => {
   for (let x = 0; x < activityInputs.length; x++) {
     activityInputs[x].addEventListener("focus", function () {
@@ -39,6 +42,8 @@ const removeFocusActivity = () => {
   }
 };
 
+/* function to set the creidt card as the 
+default selected on load or change event */
 const creditCardSelect = () => {
   for (let x = 0; x < paymentOptions.length; x++) {
     if (paymentOptions[x].value === "credit-card") {
@@ -263,23 +268,25 @@ window.addEventListener("load", function () {
   color.disabled = true;
   creditCardSelect();
 });
-
+//Accesibilty focus
 focusActivity();
 removeFocusActivity();
 
+/*Event Listeners */
 jobRole.addEventListener("click", updateOtherJobRole);
 design.addEventListener("click", updateColorOptions);
 activites.addEventListener("change", updateTotal, true);
 activites.addEventListener("change", updateConflicts, true);
 activites.addEventListener("change", validateActivity, true);
 payment.addEventListener("click", updatePayment);
-
 nameField.addEventListener("keyup", validateName);
 email.addEventListener("keyup", validateEmail);
 ccNum.addEventListener("keyup", validateCardNumber);
 zip.addEventListener("keyup", validateZip);
 cvv.addEventListener("keyup", validateCvv);
 
+/* preventDefault method calls on form submission 
+if any of the validations fail */
 form.addEventListener("submit", (e) => {
   //   e.preventDefault();
   if (!validateName()) {
@@ -291,8 +298,8 @@ form.addEventListener("submit", (e) => {
   if (!validateActivity()) {
     e.preventDefault();
   }
-
   for (let x = 0; x < paymentOptions.length; x++) {
+    //validations only run if the credit card payment is selected
     if (
       paymentOptions[x].value === "credit-card" &&
       paymentOptions[x].selected === true
