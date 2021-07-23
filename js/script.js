@@ -273,17 +273,17 @@ focusActivity();
 removeFocusActivity();
 
 /*Event Listeners */
-jobRole.addEventListener("click", updateOtherJobRole);
-design.addEventListener("click", updateColorOptions);
+jobRole.addEventListener("change", updateOtherJobRole);
+design.addEventListener("change", updateColorOptions);
 activites.addEventListener("change", updateTotal, true);
 activites.addEventListener("change", updateConflicts, true);
 activites.addEventListener("change", validateActivity, true);
-payment.addEventListener("click", updatePayment);
-nameField.addEventListener("keyup", validateName);
-email.addEventListener("keyup", validateEmail);
-ccNum.addEventListener("keyup", validateCardNumber);
-zip.addEventListener("keyup", validateZip);
-cvv.addEventListener("keyup", validateCvv);
+payment.addEventListener("change", updatePayment);
+nameField.addEventListener("blur", validateName);
+email.addEventListener("blur", validateEmail);
+ccNum.addEventListener("blur", validateCardNumber);
+zip.addEventListener("blur", validateZip);
+cvv.addEventListener("blur", validateCvv);
 
 /* preventDefault method calls on form submission 
 if any of the validations fail */
