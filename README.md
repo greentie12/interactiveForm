@@ -3,6 +3,8 @@ JavaScript Interactive Form project concentrating on DOM Manipulation, Form Vali
 JS Regular Expressions, JS Conditionals and Accessibility.
 
 #### Resubmission changes
+* Job Role, T-Shirt and Payment Info sections event listener revissed from "click" event to "change" event
+* Form validation revised for validateName getting called. Revised from a "keyup" event to a "blur" event.
 
 ## Extra Credit
 * Prevent users from registering for conflicting activities
