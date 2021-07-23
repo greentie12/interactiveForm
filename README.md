@@ -2,6 +2,8 @@
 JavaScript Interactive Form project concentrating on DOM Manipulation, Form Validation, 
 JS Regular Expressions, JS Conditionals and Accessibility.
 
+#### Resubmission changes
+
 ## Extra Credit
 * Prevent users from registering for conflicting activities
   - checkbox input and parent label are disabled according to conflicting activities
